@@ -3,6 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
 })
 
 /*
@@ -10,6 +11,14 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+	$('.name h3').click(function(e) {
+		e.preventDefault();
+		var name = $(this).text();
+		var annagram = anagrammedName(name);
+		$(this).text(annagram);
+	});
+				
 }
 
 function anagrammedName(name) {
